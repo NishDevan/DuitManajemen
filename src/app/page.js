@@ -61,7 +61,7 @@ export default async function HomePage() {
             </Box>
             <AddTransactionModal userId={userId} />
           </Box>
-          
+
           {/* KARTU SALDO UTAMA */}
           <Paper sx={{ 
             p: 4, 
@@ -111,7 +111,7 @@ export default async function HomePage() {
 
           {/* RIWAYAT TRANSAKSI TERAKHIR */}
           <Box sx={{ width: '100%' }}>
-            <Typography variant="h6" color="primary"sx={{ mb: 2, fontWeight: 700, fontFamily: 'Urbanist', textAlign: 'center' }}>
+            <Typography variant="h6" color="primary" sx={{ mb: 2, fontWeight: 700, fontFamily: 'Urbanist', textAlign: 'center' }}>
               Riwayat Transaksi Terakhir
             </Typography>
             <TransactionTable transactions={transactions} />

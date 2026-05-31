@@ -45,7 +45,7 @@ export default function RegisterPage() {
       <Box sx={{ mt: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Paper elevation={3} sx={{ p: 4, width: '100%', borderRadius: 2 }}>
           <Typography component="h1" variant="h5" fontWeight="bold" textAlign="center" gutterBottom>
-            Daftar Akun Baru
+            Register
           </Typography>
           <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ mb: 3 }}>
             Kelola keuangan pribadimu dengan lebih rapi
@@ -97,7 +97,7 @@ export default function RegisterPage() {
               <Typography variant="body2" textAlign="center">
                 Sudah punya akun?{' '}
                 <MuiLink component={Link} href="/login" underline="hover" fontWeight="bold">
-                  Masuk di sini
+                  Login
                 </MuiLink>
               </Typography>
             </Box>

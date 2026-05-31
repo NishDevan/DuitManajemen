@@ -43,10 +43,10 @@ export default function LoginPage() {
       <Box sx={{ mt: 12, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Paper elevation={3} sx={{ p: 4, width: '100%', borderRadius: 2 }}>
           <Typography component="h1" variant="h5" fontWeight="bold" textAlign="center" gutterBottom>
-            Selamat Datang Kembali
+            Login
           </Typography>
           <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ mb: 3 }}>
-            Silakan masuk untuk mengakses catatan keuangan Anda
+            Selamat datang kembali!
           </Typography>
 
           {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
@@ -57,7 +57,7 @@ export default function LoginPage() {
               required
               fullWidth
               id="email"
-              label="Alamat Email"
+              label="Email Address"
               name="email"
               autoComplete="email"
               autoFocus
@@ -79,13 +79,13 @@ export default function LoginPage() {
               disabled={loading}
               sx={{ mt: 3, mb: 2, py: 1.5, fontWeight: 'bold' }}
             >
-              {loading ? 'Memverifikasi...' : 'Masuk ke Aplikasi'}
+              {loading ? 'Logging in...' : 'Login'}
             </Button>
             <Box sx={{ mt: 2 }}>
               <Typography variant="body2" textAlign="center">
                 Belum punya akun?{' '}
                 <MuiLink component={Link} href="/register" underline="hover" fontWeight="bold">
-                  Daftar akun gratis
+                  Register
                 </MuiLink>
               </Typography>
             </Box>
