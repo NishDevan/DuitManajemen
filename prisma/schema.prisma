@@ -1,0 +1,41 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Model untuk User (Persiapan jika nanti ditambah fitur Login)
+model User {
+  id           String        @id @default(uuid())
+  email        String        @unique
+  name         String?
+  password     String?
+  createdAt    DateTime      @default(now())
+  transactions Transaction[]
+}
+
+// Model Utama untuk Transaksi Keuangan
+model Transaction {
+  id          String          @id @default(uuid())
+  amount      Float           // Jumlah uang (pemasukan atau pengeluaran)
+  type        TransactionType // Menggunakan Enum: INCOME atau EXPENSE
+  category    String          // Contoh: Makanan, Gaji, Transportasi, Investasi
+  description String?         // Catatan opsional dari user
+  date        DateTime        @default(now()) // Tanggal transaksi terjadi
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  // Relasi ke User
+  userId      String
+  user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// Tipe Enum untuk membedakan Pemasukan dan Pengeluaran
+enum TransactionType {
+  INCOME
+  EXPENSE
+}
